@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom font fallback */
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F2F2F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #60B9F3;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #014AAD;
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-royal-blue hover:bg-royal-blue-dark text-soft-white font-medium px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+}
+
+.btn-secondary {
+  @apply bg-sky-blue hover:bg-sky-blue-dark text-soft-white font-medium px-6 py-3 rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
+}
+
+.btn-accent {
+  @apply bg-bright-cyan hover:bg-sky-blue text-soft-white font-medium px-6 py-3 rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
+}
+
+/* Card styles */
+.card {
+  @apply bg-soft-white rounded-2xl shadow-lg border border-light-gray hover:shadow-xl;
+}
+
+.card-header {
+  @apply border-b border-light-gray p-6;
+}
+
+/* Input styles */
+.input-field {
+  @apply w-full px-4 py-3 border border-light-gray rounded-xl focus:ring-2 focus:ring-sky-blue focus:border-sky-blue bg-soft-white text-charcoal;
+}
+
+/* Status badges */
+.badge-active {
+  @apply bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium;
+}
+
+.badge-inactive {
+  @apply bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium;
+}
+
+.badge-trial {
+  @apply bg-sky-blue bg-opacity-20 text-royal-blue px-3 py-1 rounded-full text-sm font-medium;
+}
+
+.badge-maintenance {
+  @apply bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium;
+}
+
+/* Toast animations */
+@keyframes slide-in-down {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out-up {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+.toast-enter {
+  animation: slide-in-down 0.3s ease-out forwards;
+}
+
+.toast-exit {
+  animation: slide-out-up 0.3s ease-in forwards;
+}
